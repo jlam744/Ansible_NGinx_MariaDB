@@ -20,6 +20,8 @@ Here is an example of copying the ssh key for DB2 then pinging it to ensure that
 
 Then I created a user named egoad on the WEB and DB servers after I made a group out of them (to make the process easier)
 
+<p align="center"
+
 ![Ansible User](https://github.com/jlam744/Ansible_NGinx_MariaDB/assets/95711303/e6f7d403-e9c8-4be3-b5b6-56a99178ea25)
 
 
@@ -38,6 +40,8 @@ Then I created a user named egoad on the WEB and DB servers after I made a group
 <h2>Installing MariaDB</h2>
 - <b>Installed, Started, and Configured MariaDB as well as include auto start at the system boot:</b>
 
+<p align="center"
+ 
 ![Mariadb](https://github.com/jlam744/Ansible_NGinx_MariaDB/assets/95711303/76f6920d-5c27-4577-a43c-d020a5a5d13d)
 ![Mariadb2](https://github.com/jlam744/Ansible_NGinx_MariaDB/assets/95711303/79310b86-ad13-4766-9c89-3a62f28ea0c8)
 ![MariaDB3](https://github.com/jlam744/Ansible_NGinx_MariaDB/assets/95711303/9db525de-bba9-4113-af5f-79fd8fab62d8)
