@@ -9,14 +9,16 @@
 <br />
 
 <h2>Ansible Install</h2>
-Installed Ansible using process found in the code file within this repository. After installing copy the ssh key from all the anisble hosts. In my scenario I copied from web1, web2, db1, and db2.: 
+<b>Installed Ansible using process found in the code file within this repository. After installing copy the ssh key from all the anisble hosts. In my scenario I copied from web1, web2, db1, and db2.:</b> 
 <br />
 <br />
 
 Here is an example of copying the ssh key for DB2 then pinging it to ensure that there is connection:
 <p align="center"
 
-![Ansible screenshot](https://github.com/jlam744/Ansible_NGinx_MariaDB/assets/95711303/1360cda2-553d-405e-874f-6a021939bc73)
+![DB2 ssh Key](https://github.com/jlam744/Ansible_NGinx_MariaDB/assets/95711303/3d823566-64fc-4790-bc6b-3974b5dbed53)
+![DB2 Ping](https://github.com/jlam744/Ansible_NGinx_MariaDB/assets/95711303/f51be625-9578-41bc-9340-8274a9e6437a)
+
 
 Then I created a user named egoad on the WEB and DB servers after I made a group out of them (to make the process easier):
 
