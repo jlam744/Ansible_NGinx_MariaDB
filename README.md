@@ -27,9 +27,13 @@ Then I created a user named egoad on the WEB and DB servers after I made a group
 <h2>Installing Nginx on WEB servers</h2>
 - <b>Installed, Started, and Configured Nginx as well as include auto start at the system boot:</b>
 
+<p align="center"
+
 ![Nginx](https://github.com/jlam744/Ansible_NGinx_MariaDB/assets/95711303/a95da2af-cc53-492e-b74a-4ef0fa738715)
 ![Nginx Start](https://github.com/jlam744/Ansible_NGinx_MariaDB/assets/95711303/fb8a7b72-be09-4767-9295-ee061b4a037c)
 ![startup page nginx](https://github.com/jlam744/Ansible_NGinx_MariaDB/assets/95711303/3a07094c-094a-43fd-853c-9f10ff576a86)
+
+</p>
 
 <h2>Installing MariaDB</h2>
 - <b>Installed, Started, and Configured MariaDB as well as include auto start at the system boot:</b>
