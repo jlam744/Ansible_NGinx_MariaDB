@@ -3,47 +3,40 @@
 <h1 align="center">
  
 <h2>Description</h2>
-<b>Utilized Windows Powershell script which is responsible for pushing out Windows Event Log information (Security Event 4625) for failed RDP attacks and using a third party API to collect information on the attackers location.
+<b>Utilized script to install Ansible then NGinx and MariaDB. Ansible uses playbooks, to automate tasks like software installation, configuration changes, and file management across multiple systems. NGinx can act as a reverse proxy and load balancer, distributing incoming web traffic among backend servers. It's commonly used to improve website performance, scalability, and security. MariaDB is an open-source relational database management system (RDBMS) that is a drop-in replacement for MySQL. It offers data storage, retrieval, and management, making it suitable for various applications and websites. MariaDB is known for its high performance, reliability, and extensive features, while maintaining compatibility with MySQL databases.
 </b>
 <br />
 <br />
-Azure Sentinel (SIEM) is set up and connects to a live virtual machine acting as a honey pot.
-(RDP Brute Force) from all around the world is displayed. PowerShell script
-looks up the attackers Geolocation information and plots it on Azure Sentinel Map.
+
+<h2>Ansible Install</h2>
+Installed Ansible using process found in the code file within this repository. After installing copy the ssh key from all the anisble hosts. In my scenario I copied from web1, web2, db1, and db2. 
 <br />
 <br />
 
+Here is an example of copying the ssh key for DB2 then pinging it to ensure that there is connection
 <p align="center"
 
-![Geo API](https://github.com/jlam744/SentinelGeo_lab/assets/95711303/4ab2eb9a-9db6-44b0-b487-55217de0ea23)
-![RDP Heat Map](https://github.com/jlam744/SentinelGeo_lab/assets/95711303/6b4c6dd8-3f5b-448a-828b-2948154cbbc8)
+![Ansible screenshot](https://github.com/jlam744/Ansible_NGinx_MariaDB/assets/95711303/1360cda2-553d-405e-874f-6a021939bc73)
+
+Then I created a user named egoad on the WEB and DB servers after I made a group out of them (to make the process easier)
+![Ansible User](https://github.com/jlam744/Ansible_NGinx_MariaDB/assets/95711303/e6f7d403-e9c8-4be3-b5b6-56a99178ea25)
 
 
 </p>
-<h2>Languages Used</h2>
+<h2>Installing Nginx on WEB servers</h2>
+- <b>Installed, Started, and Configured Nginx as well as include auto start at the system boot:</b>
 
-- <b>PowerShell:</b> Extract RDP failed logon logs from Windows Event Viewer
-![Powershell script](https://github.com/jlam744/SentinelGeo_lab/assets/95711303/3faedbc4-c5d8-44d2-9c46-f3cf6e023a63)
+![Nginx](https://github.com/jlam744/Ansible_NGinx_MariaDB/assets/95711303/a95da2af-cc53-492e-b74a-4ef0fa738715)
+![Nginx Start](https://github.com/jlam744/Ansible_NGinx_MariaDB/assets/95711303/fb8a7b72-be09-4767-9295-ee061b4a037c)
+![startup page nginx](https://github.com/jlam744/Ansible_NGinx_MariaDB/assets/95711303/3a07094c-094a-43fd-853c-9f10ff576a86)
 
+<h2>Installing MariaDB</h2>
+- <b>Installed, Started, and Configured MariaDB as well as include auto start at the system boot:</b>
 
-<h2>Utilities Used</h2>
+![Mariadb](https://github.com/jlam744/Ansible_NGinx_MariaDB/assets/95711303/76f6920d-5c27-4577-a43c-d020a5a5d13d)
+![Mariadb2](https://github.com/jlam744/Ansible_NGinx_MariaDB/assets/95711303/79310b86-ad13-4766-9c89-3a62f28ea0c8)
+![MariaDB3](https://github.com/jlam744/Ansible_NGinx_MariaDB/assets/95711303/9db525de-bba9-4113-af5f-79fd8fab62d8)
 
-- <b>ipgeolocation.io:</b> IP Address to Geolocation API
-![Powershell to API ](https://github.com/jlam744/SentinelGeo_lab/assets/95711303/4fa4ff8f-029a-4cb1-bb7a-6659632b3c70)
-
-<h2>Attacks from China coming in; Custom logs being output with geodata in addition to view from Log Analytics Workspace</h2>
-
-![China logs](https://github.com/jlam744/SentinelGeo_lab/assets/95711303/b33627aa-e3bc-4f79-9d0e-00673fe0fbe9)
-![Log Analytic Workspace obtained info from VM](https://github.com/jlam744/SentinelGeo_lab/assets/95711303/a81c3897-ef38-478c-a25d-6611fc8852e6)
-
-
-<p align="center">
-
-</p>
-
-<h2>World map of incoming attacks after 24 hours (built custom logs including geodata)</h2>
-
-![24 hrs attack](https://github.com/jlam744/SentinelGeo_lab/assets/95711303/12b52d37-f7fa-4a6b-93a9-22e37f65e8ed)
 
 <p align="center">
 
