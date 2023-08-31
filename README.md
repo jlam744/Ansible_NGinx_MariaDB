@@ -43,8 +43,6 @@ Then I created a user named egoad on the WEB and DB servers after I made a group
 ![MariaDB3](https://github.com/jlam744/Ansible_NGinx_MariaDB/assets/95711303/9db525de-bba9-4113-af5f-79fd8fab62d8)
 
 
-<p align="center">
-
 </p>
 
 
