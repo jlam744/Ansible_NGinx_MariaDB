@@ -9,7 +9,7 @@
 <br />
 
 <h2>Ansible Install</h2>
-<b>Installed Ansible using process found in the code file within this repository. After installing copy the ssh key from all the anisble hosts. In my scenario I copied from web1, web2, db1, and db2.:</b> 
+<b>-Installed Ansible using process found in the code file within this repository. After installing copy the ssh key from all the anisble hosts. In my scenario I copied from web1, web2, db1, and db2.:</b> 
 <br />
 <br />
 
