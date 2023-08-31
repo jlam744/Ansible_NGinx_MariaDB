@@ -1,0 +1,73 @@
+install ansible: sudo apt install ansible
+
+cd it 385/
+ls
+mkdir ansible
+cd ansible/
+
+
+inside the inventory file you make:
+
+Name of inventory: inventory.txt
+#This group is already made
+[all]
+web1 ansible_host=192.168.0.111
+db1 ansible_host=192.168.0.121
+web2 ansible_host=192.168.0.112
+db2 ansible_host=192.168.0.121
+
+#groups that we can make
+[web]
+web1
+web2
+
+
+[db]
+db1
+db2
+
+[routers]
+csr1
+csr2
+
+[lab7.1]
+web1
+web2
+db1
+db2
+
+run ansible ping: ansible -i inventory.txt web1 -m ping -k -u justincase
+
+ssh-keygen -t rsa
+
+*hit enter 3 times
+
+cd .ssh
+ls -al
+
+ssh-copy-id -i ~/.ssh/id_rsa.pub justincase@web1
+
+ansible -i inventory.txt web1 -m ping 
+
+ssh-copy-id -i ~/.ssh/id_rsa.pub justincase@db1
+
+ansible -i inventory.txt test -a 'free -m'
+
+ansible -i inventory.txt lab7.1 -m user -a "name=egoad state=present" -b -K
+
+
+Part 2: Installing Nginx on WEB servers
+
+ansible -i inventory.txt web -m apt -a 'name=nginx state=latest' -b -K
+ansible -i inventory.txt web -m service -a 'name=nginx state=started enabled=yes'
+ansible -i inventory.txt web -m apt -a 'name=nginx state=latest' -b -K
+
+Part 3: Installing MariaDB
+
+ansible -i inventory.txt db -m apt -a "name=software-properties-common" -b -K
+ansible -i inventory.txt db -m apt -a "name=dirmngr" -b -K
+ansible -i inventory.txt db -m apt -a "name=apt-transport-https" -b -K
+ansible -i inventory.txt db -a "sudo apt-key adv --fetch-keys 'https://mariadb.org/mariadb_release_signing_key.asc'" -b -K
+ansible -i inventory.txt db -a "sudo apt-key adv --fetch-keys 'https://mariadb.org/mariadb_release_signing_key.asc'" -b -K
+ansible -i inventory.txt db -a "sudo add-apt-repository 'deb [arch=amd64,arm64,ppc64el,s396x] https://atl.mirrors.knownhost.com/mariadb/repo/16.7/ubuntu focal main'" -b -K
+ansible -i inventory.txt db -m apt -a "name=mariadb-server" -b -K
