@@ -19,6 +19,7 @@ Here is an example of copying the ssh key for DB2 then pinging it to ensure that
 ![Ansible screenshot](https://github.com/jlam744/Ansible_NGinx_MariaDB/assets/95711303/1360cda2-553d-405e-874f-6a021939bc73)
 
 Then I created a user named egoad on the WEB and DB servers after I made a group out of them (to make the process easier)
+
 ![Ansible User](https://github.com/jlam744/Ansible_NGinx_MariaDB/assets/95711303/e6f7d403-e9c8-4be3-b5b6-56a99178ea25)
 
 
